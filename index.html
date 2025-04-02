@@ -1,17 +1,66 @@
 <!DOCTYPE html>
-<html>
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    <!-- we import arjs version without NFT but with marker + location based support -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <body style="margin : 0px; overflow: hidden;">
-        <a-scene embedded arjs>
-        <a-marker preset="hiro">
-            <a-entity
-            position="0 0 0"
-            gltf-model="DragonbornTest.glb"
-            ></a-entity>
-        </a-marker>
-        <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose a Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Choose a Page</h1>
+    <select id="pageSelect">
+        <option value="DragonbornTest.html">Test 1</option>
+        <option value="TargetingTest.html">Target Test</option>
+        <option value="MultipleModelsTest.html">Multiple Target and Model Test</option>
+    </select>
+    <br>
+    <button onclick="redirectToPage()">Go to Page</button>
+</div>
+
+<script>
+    function redirectToPage() {
+        const selectedPage = document.getElementById('pageSelect').value;
+        window.location.href = selectedPage;
+    }
+</script>
+
+</body>
 </html>
