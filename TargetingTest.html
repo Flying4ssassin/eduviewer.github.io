@@ -4,12 +4,12 @@
     <!-- we import arjs version without NFT but with marker + location based support -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <body style="margin : 0px; overflow: hidden;">
-        <a-scene embedded arjs>
-            <a-marker type='pattern' url='targets/pattern-youtube.patt'></a-marker-camera>
+        <a-scene embedded arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+            <a-marker type='barcode' value='2'>
             <a-entity
             position="0 0 0"
             scale="0.5 0.5 0.5"
-            gltf-model="models/DragonbornTest.glb"
+            gltf-model="models/ISS.glb"
             ></a-entity>
         </a-marker>
         <a-entity camera></a-entity>
