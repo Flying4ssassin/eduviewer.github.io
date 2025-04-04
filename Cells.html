@@ -5,20 +5,33 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.4/dist/aframe-extras.min.js"></script>
     <body style="margin : 0px; overflow: hidden;">
-        <a-scene embedded arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+        <a-scene embedded arjs='trackingMethod: best; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
             <a-marker type='barcode' value='1'>
                 <a-entity
                 position="0 0 0"
-                scale="0.25 0.25 0.25"
+                scale="0.5 0.5 0.5"
                 gltf-model="models/AnimalCell.glb"
-                animation-mixer="clip: *;"
                 ></a-entity>
+            </a-marker>
             <a-marker type='barcode' value='2'>
                 <a-entity
                 position="0 0 0"
-                scale="0.25 0.25 0.25"
+                scale="0.01 0.01 0.01"
                 gltf-model="models/PlantCell.glb"
-                animation-mixer="clip: *;"
+                ></a-entity>
+            </a-marker>
+            <a-marker type='barcode' value='3'>
+                <a-entity
+                position="0 0 0"
+                scale="20 20 20"
+                gltf-model="models/ArchaeaCell.glb"
+                ></a-entity>
+            </a-marker>
+            <a-marker type='barcode' value='4'>
+                <a-entity
+                position="0 0 0"
+                scale="0.02 0.02 0.02"
+                gltf-model="models/BacteriaCell.glb"
                 ></a-entity>
             </a-marker>
         <a-entity camera></a-entity>
