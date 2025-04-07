@@ -1,69 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose a Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            text-align: center;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        select {
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        button {
-            margin-top: 10px;
-            padding: 10px 15px;
-            font-size: 16px;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduViewer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+    }
+    .container {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 900px;
+    }
+    .container h1 {
+      margin-bottom: 30px;
+      font-size: 26px;
+      color: #333;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background-color: #f8f8f8;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      border: 2px solid transparent;
+      text-align: left;
+    }
+    .card:hover {
+      background-color: #e3fcef;
+      border-color: #4CAF50;
+      transform: translateY(-4px);
+    }
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 16px;
+    }
+    .card-title {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 6px;
+      color: #333;
+    }
+    .card-description {
+      font-size: 14px;
+      color: #666;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Choose a Page</h1>
-    <select id="pageSelect">
-        <!--
-        <option value="DragonbornTest.html">Test 1</option>
-        <option value="TargetingTest.html">Target Test</option>
-        <option value="MultipleModelsTest.html">Multiple Target and Model Test</option>
-        <option value="AnimationTest.html">Animation Test</option>
-        -->
-        <option value="Cells.html">Cells</option>
-    </select>
-    <br>
-    <button onclick="redirectToPage()">Go to Page</button>
+  <h1>AR Experiences</h1>
+  <body>Right now this is a passion project to help with sicence education. A difficulty for many students is visualizing what is being discussed in class. <br> This site is made with AR.js and uses models from SketchFab.</body>
+  <div class="card-grid">
+    <!-- Card Example -->
+    <div class="card" onclick="goToPage('Cells.html')">
+      <img src="./thumbnails/CellsThumbnail.png" alt="Cells Page">
+      <div class="card-content">
+        <div class="card-title">Cells</div>
+        <div class="card-description">Explore the simularities and differences between types of cells with labeled models. </div>
+      </div>
+    </div>
+
+    <!-- More cards can be added below -->
+    <!--
+    <div class="card" onclick="goToPage('DragonbornTest.html')">
+      <img src="https://via.placeholder.com/400x140?text=Dragonborn" alt="Dragonborn Test">
+      <div class="card-content">
+        <div class="card-title">Test 1</div>
+        <div class="card-description">Run the Dragonborn test to evaluate character animations and model responses.</div>
+      </div>
+    </div>
+    -->
+  </div>
+  <footer>© 2025 EduViewer</footer>
 </div>
 
 <script>
-    function redirectToPage() {
-        const selectedPage = document.getElementById('pageSelect').value;
-        window.location.href = selectedPage;
-    }
+  function goToPage(url) {
+    window.location.href = url;
+  }
 </script>
 
 </body>
