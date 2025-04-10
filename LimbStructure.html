@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Limb Structure - EduViewer</title>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+    </head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <!-- we import arjs version without NFT but with marker + location based support -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.4/dist/aframe-extras.min.js"></script>
+    <body style="margin : 0px; overflow: hidden;">
+        <a-scene embedded arjs='trackingMethod: best; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+            <a-marker type='barcode' value='1'>
+                <a-entity position="-1.24 1.45 -0.65" rotation="0 90 0" scale="0.2 0.2 0.2" gltf-model="models/HumanLimb.glb"></a-entity>
+            </a-marker>
+            <a-marker type='barcode' value='2'>
+                <a-entity position="0 1.45 0.75" rotation="0 90 0" scale="0.2 0.2 0.2" gltf-model="models/HorseLimb.glb"></a-entity>
+            </a-marker>
+            <a-marker type='barcode' value='3'>
+                <a-entity position="-0.65 1.45 0.08" rotation="0 90 0" scale="0.2 0.2 0.2" gltf-model="models/TigerLimb.glb"></a-entity>
+            </a-marker>
+        <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
